@@ -3,8 +3,7 @@
 ##
 ## Get latest from `dotnet new gitignore`
 
-## Custom:
-reorganize_after_split.sh
+
 
 # dotenv files
 .env
