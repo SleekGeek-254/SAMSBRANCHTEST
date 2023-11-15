@@ -18,7 +18,7 @@ if [ "$merge_response" == "y" ] || [ "$merge_response" == "Y" ]; then
 fi
 
 # Prompt the user if they want to push the changes to the remote repository
-echo "Do you want to push the changes to the remote repository? (y/n)"
+echo "Do you want to push the changes to the remote repository? (yes/n)"
 read push_response
 
 if [ "$push_response" == "yes" ]; then
