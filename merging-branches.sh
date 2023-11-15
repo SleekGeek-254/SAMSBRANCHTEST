@@ -24,7 +24,7 @@ if [ "$merge_response" == "y" ] || [ "$merge_response" == "Y" ]; then
     echo "Do you want to push the changes to the remote repository? (y/n)"
     read push_response
 
-    if [ "$push_response" == "y" ]; then
+    if [ "$push_response" == "yes" ]; then
         # Push changes to the remote repository
         git push origin master
     fi
