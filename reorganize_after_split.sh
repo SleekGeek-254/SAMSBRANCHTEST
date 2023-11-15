@@ -16,7 +16,7 @@ shopt -s extglob
 mv !(reorganize_after_split.sh) "$selected_directory"/ 2> /dev/null
 
 # Remove everything in the root directory except the specified subdirectory
-rm -r !( "$selected_directory" )
+find . -maxdepth 1 ! -name "$selected_directory" -exec rm -r {} +
 
 
 # Commit the changes
