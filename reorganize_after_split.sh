@@ -14,7 +14,10 @@ git checkout "$selected_directory"
 mkdir "$selected_directory"
 shopt -s extglob
 mv !(reorganize_after_split.sh) "$selected_directory"/ 2> /dev/null
-#rm reorganize_after_split.sh
+
+# Remove everything in the root directory except the specified subdirectory
+rm -r !( "$selected_directory" )
+
 
 # Commit the changes
 git add "$selected_directory"/
