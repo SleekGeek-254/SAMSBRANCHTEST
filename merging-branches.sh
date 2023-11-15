@@ -16,22 +16,17 @@ if [ "$merge_response" == "y" ] || [ "$merge_response" == "Y" ]; then
     git merge --allow-unrelated-histories -X theirs "$selected_branch"
 
     # Commit the changes
-    git commit -m "Merge $selected_branch into master"
-fi
+    git add "$selected_branch"/
+    git commit -m "Merge "$selected_branch" into Master branch"
 
+    # Prompt the user if they want to push the changes to the remote repository
+    echo "Do you want to push the changes to the remote repository? (y/n)"
+    read push_response
 
-# Commit the changes
-git add "$selected_branch"/
-git commit -m "Merge "$selected_branch" into Master branch"
-
-
-# Prompt the user if they want to push the changes to the remote repository
-echo "Do you want to push the changes to the remote repository? (y/n)"
-read push_response
-
-if [ "$push_response" == "y" ]; then
-    # Push changes to the remote repository
-    git push origin master
+    if [ "$push_response" == "y" ]; then
+        # Push changes to the remote repository
+        git push origin master
+    fi
 fi
 
 # Display a message indicating the process is complete
