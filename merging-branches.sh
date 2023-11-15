@@ -27,7 +27,7 @@ if [ "$push_response" == "yes" ]; then
     git commit -m "Merge "$selected_branch" into Master branch"
 
     # Push changes to the remote repository
-    git push origin master
+    git push origin master #this should be DEV repo
 fi
 
 # Display a message indicating the process is complete
