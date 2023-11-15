@@ -13,8 +13,9 @@ read merge_response
 
 if [ "$merge_response" == "y" ] || [ "$merge_response" == "Y" ]; then
     # Merge changes from the specified branch into master
-    git merge --allow-unrelated-histories -X theirs "$selected_branch"
-
+    #git merge --allow-unrelated-histories -X theirs "$selected_branch"
+    git checkout "$selected_branch" -- "$selected_branch"
+    
     # Commit the changes
     git add "$selected_branch"/
     git commit -m "Merge "$selected_branch" into Master branch"
