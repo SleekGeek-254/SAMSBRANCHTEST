@@ -21,7 +21,7 @@ rm -r !("$selected_directory")
 
 
 # Commit the changes
-git add "$selected_directory"/
+git add .
 git commit -m "Organize structure with '$selected_directory' subdirectory"
 
 
