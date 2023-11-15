@@ -11,10 +11,14 @@ git checkout master
 echo "Do you want to merge the changes to from branch repository? (y/n) "
 read merge_response
 
-if [ "merge_response" == "y" or  "merge_response" == "Y" ]; then
-    # Push changes to the remote repository
+if [ "$merge_response" == "y" ] || [ "$merge_response" == "Y" ]; then
+    # Merge changes from the specified branch into master
     git merge --allow-unrelated-histories -X theirs "$selected_branch"
+
+    # Commit the changes
+    git commit -m "Merge $selected_branch into master"
 fi
+
 
 # Commit the changes
 git add "$selected_branch"/
